@@ -5,6 +5,7 @@ const data = [
     id: 1,
     name: "Guards",
     icon: <HiCake className="icon" />,
+    activeRoom: 0,
     users: [
       {
         id: 1,
@@ -102,6 +103,7 @@ const data = [
     id: 2,
     name: "Blarg",
     icon: <HiMoon className="icon" />,
+    activeRoom: 3,
     users: [
       {
         id: 1,

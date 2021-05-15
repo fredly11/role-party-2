@@ -1,12 +1,12 @@
 import data from "./data";
 import React, { useState } from "react";
+import Messages from "./Components/Messages";
 
 function App() {
   const [parties, setParties] = useState(data);
   const [activeParty, setActiveParty] = useState(0);
-  console.log(parties);
 
-  const { name, icon, users, rooms } = parties[activeParty];
+  const { name, icon, users, rooms, activeRoom } = parties[activeParty];
 
   return (
     <section className="section">
@@ -34,9 +34,15 @@ function App() {
           <h3>{name}</h3>
           <h4>{icon}</h4>
           {rooms.map((room) => {
-            return (<div key={room.id} className="job-btn">{room.name}</div>
-            
-            ))}}
+            return (
+              <div key={room.id} className="job-btn">
+                {room.name}
+              </div>
+            );
+          })}
+          <div>
+            <Messages messages={rooms[activeRoom].messages} />
+          </div>
         </article>
       </div>
     </section>
