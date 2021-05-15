@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import data from "./data";
+import React, { useState } from "react";
 
 function App() {
+  const [parties, setParties] = useState(data);
+  const [activeParty, setActiveParty] = useState(0);
+  console.log(parties);
+
+  const { name, icon, users, rooms } = parties[activeParty];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="section">
+      <div className="title">
+        <h2>Parties</h2>
+        <div className="underline"></div>
+      </div>
+      <div className="jobs-center">
+        <div className="btn-container">
+          {parties.map((party, index) => {
+            return (
+              <button
+                key={party.id}
+                onClick={() => {
+                  setActiveParty(index);
+                }}
+                className={`job-btn ${index === activeParty && "active-btn"}`}
+              >
+                {party.icon}
+              </button>
+            );
+          })}
+        </div>
+        <article className="job-info">
+          <h3>{name}</h3>
+          <h4>{icon}</h4>
+          {rooms.map((room) => {
+            return (<div key={room.id} className="job-btn">{room.name}</div>
+            
+            ))}}
+        </article>
+      </div>
+    </section>
   );
 }
 
