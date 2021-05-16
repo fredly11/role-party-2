@@ -160,7 +160,7 @@ Jobs
 */
 
 .jobs-center {
-  width: 80vw;
+  width: 50%;
   margin: 0 auto;
   max-width: var(--max-width);
 }
@@ -188,6 +188,7 @@ Jobs
 .message-container {
   border: var(--clr-dark-purple);
   border-radius: 0.25rem;
+  padding: 20px;
 }
 .job-btn:hover {
   color: var(--clr-light-purple);
@@ -247,6 +248,15 @@ Jobs
     box-shadow: -2px 0 var(--clr-light-purple);
   }
 }
+
+.container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding-left: 2rem;
+}
+
 .btn {
   text-transform: uppercase;
   background: var(--clr-light-purple);
