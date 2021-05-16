@@ -27,7 +27,7 @@ function App() {
         party.rooms.push({
           id: party.rooms.length + 1,
           name: text,
-          rooms: [],
+          messages: [],
         });
       }
       return party;
